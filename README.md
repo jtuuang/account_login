@@ -5,12 +5,10 @@
 - 使用者可以輸入信箱與密碼，按下 Sign in 確認資料庫有無符合的資料。
 
 ## 安裝
-- 開啟終端機(Terminal)cd 到存放專案本機位置並執行:
-git clone https://github.com/jtuuang/account_login.git
-- 初始
-npm install
-- 開啟程式
-npm run dev
+- 開啟終端機(Terminal)cd 到存放專案本機位置並執行: git clone https://github.com/jtuuang/account_login.git
+- 進入資料夾: cd account_login
+- 初始: npm install
+- 開啟程式: npm run dev
 
 ## 使用工具
 - Visual Studio
