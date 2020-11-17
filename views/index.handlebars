@@ -1,0 +1,24 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <form action="/login" method="POST">
+        <h2 class="text-center">Account Login</h2>
+        <div class="form-group d-flex justify-content-center mt-3">
+          <input type="email" class="form-control" name="email" placeholder="Email" style="width: 250px;" required>
+        </div>
+        <div class="form-group d-flex justify-content-center mt-3">
+          <input type="password" class="form-control" name="password" placeholder="Password" style="width: 250px;"
+            required>
+        </div>
+        {{#if result}}
+        <div class="alert alert-danger mx-auto" role="alert" style="width: 250px;">
+          Email 或 Password 錯誤
+        </div>
+        {{/if}}
+        <div class="text-center mt-5">
+          <button type="submit" class="btn btn-outline-dark">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
