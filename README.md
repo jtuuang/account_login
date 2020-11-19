@@ -14,4 +14,15 @@
 - Visual Studio
 - Express
 - Express-Handlebars
+- express-session
 - body-parser
+
+## 使用者資料
+
+| Email              | Password        | 
+|:-------------------|----------------:|
+|tony@stark.com      |iamironman       |
+|captain@hotmail.com |icandothisallday |
+|peter@parker.com    |enajyram         |
+natasha@gamil.com    |*parol#@$!       |
+|nick@shield.com     |password         |
