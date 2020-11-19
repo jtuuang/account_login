@@ -13,21 +13,23 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(expressSession({
-  secret: 'secret key',
-  cookie: { maxAge: 10 * 1000 }
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 }
 }))
 
 app.get('/', (req, res) => {
-  if (req.session.name) {
-    res.render('welcome', { result: req.session.name })
+  if (req.session.firstName) {
+    res.render('welcome', { result: req.session })
   } else {
     res.render('index')
   }
 })
 
 app.get('/login', (req, res) => {
-  if (req.session.name) {
-    res.render('welcome', { result: req.session.name })
+  if (req.session.firstName) {
+    res.render('welcome', { result: req.session })
   } else {
     res.redirect('/')
   }
@@ -35,17 +37,17 @@ app.get('/login', (req, res) => {
 
 app.post('/login', (req, res) => {
   const { email, password } = req.body
-  const result = isUser(email, password).firstName
+  const result = isUser(email, password)
 
   if (!result) return res.render('index', { result: !result })
   if (result) {
-    req.session.name = result
+    req.session.firstName = result.firstName
     res.render('welcome', { result })
   }
 })
 
 app.post('/', (req, res) => {
-  req.session.name = null
+  req.session.firstName = null
   res.redirect('/')
 })
 
